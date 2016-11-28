@@ -1,8 +1,9 @@
 # Import data for transparency experiment
 rm(list=ls())
 library(xlsx)
-
-df <- read.xlsx(file = "Z:/Projects/Transparency/Experiment/Data/results_raw.xlsx", sheetIndex = 1, startRow = 3, header = TRUE, endRow = 217, colIndex = c(6:61))
+wd <- "Z:/Projects/R Projects/transparency_submission" # specify working directory here
+setwd(wd)
+df <- read.xlsx(file = paste0(wd, "/0 results_raw.xlsx"), sheetIndex = 1, startRow = 3, header = TRUE, endRow = 217, colIndex = c(6:61))
 
 # Create one Contribution variable (numeric)
 df$Contribution <- ifelse(is.na(df$Control) == FALSE, df$Control,
@@ -188,6 +189,6 @@ df$ReaAdv <- df$AdviceD+df$RecommendationD
 dfsub <- df[df$Treatment != "Control",]
 
 
-write.xlsx(x = df, "Z:/Projects/R Projects/transparency/results_cleaned.xlsx")
+write.xlsx(x = df, paste0(wd, "/2 results_cleaned.xlsx"))
 
-save.image("Z:/Projects/Transparency/Submission/Data/2 results_cleaned.RData")
+save.image(paste0(wd, "/2 results_cleaned.RData"))

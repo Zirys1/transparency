@@ -1,7 +1,8 @@
 # Data Import
 rm(list=ls())
 Sys.setenv(LANG = "en")
-setwd("Z:/Projects/Transparency/Submission/Data")
+wd <- "Z:/Projects/R Projects/transparency_submission" # specify working directory here
+setwd(wd)
 load("2 results_cleaned.RData")
 
 library(psych)

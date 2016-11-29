@@ -19,7 +19,7 @@ df$Treatment <- ifelse(is.na(df$Control) == FALSE, 0,
                                      ifelse(is.na(df$Nudge.I.P) == FALSE, 3,
                                             ifelse(is.na(df$Nudge.P) == FALSE, 4, NA)))))
 df$Treatment <- factor(df$Treatment, levels = c(0,1,2,4,3), 
-                       labels = c("Control", "Default", "Default+Info", "Default+Purpose", "Default+Info+Purpose"))
+                       labels = c("Control", "Default", "Default\n+Info", "Default\n+Purpose", "Default\n+Info\n+Purpose"))
 ## delete "old" variables
 df <- df[,-c(3:7)]
 df <- df[,c(1:2, 53, 52, 3:51)]
@@ -189,6 +189,6 @@ df$ReaAdv <- df$AdviceD+df$RecommendationD
 dfsub <- df[df$Treatment != "Control",]
 
 
-write.xlsx(x = df, paste0(wd, "/2 results_cleaned.xlsx"))
+#write.xlsx(x = df, paste0(wd, "/2 results_cleaned.xlsx"))
 
 save.image(paste0(wd, "/2 results_cleaned.RData"))

@@ -33,19 +33,6 @@ table(df$Contributed, df$Treatment)
 table(df$Used.default, df$Treatment)
 
 # Figure 1 ----
-ggplot(data = df, aes(x = Treatment, y = Contribution)) +
-  stat_boxplot(geom ='errorbar', width = 0.5) +
-  geom_boxplot() +
-  stat_summary(fun.y = mean, colour="darkred", geom="point", shape=18, size=3) +
-  scale_y_continuous(breaks = c(0, 1, 2, 3, 4, 5, 6, 7, 8,9,10)) +
-  labs(x = "Experimental group", y='Contribution [€]') +
-  theme(legend.position="none",
-        plot.title = element_text(angle = 45, vjust=.5,size = 10),
-        axis.title.x = element_text(size = 26),
-        axis.title.y = element_text(size = 26),
-        axis.text = element_text(vjust=.5, size=16))
-
-# Figure 1 (alternative: Barplot with error bars/ 95CIs) ----
 # below function calculates necessary components of bar plots
 summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
                       conf.interval=.95, .drop=TRUE) {
@@ -87,15 +74,10 @@ bar <- summarySE(df, measurevar = "Contribution", groupvars = "Treatment")
 
 ggplot(data = bar, aes(x = Treatment, y = Contribution)) +
   geom_bar(fill = "grey", color = "black", stat = "identity", width = 0.5) +
-  geom_errorbar(aes(ymin = (Contribution - ci), ymax = (Contribution + ci)), width = 0.25) +
+  geom_errorbar(aes(ymin = (Contribution - ci), ymax = (Contribution + ci)), width = 0.1) +
   scale_y_continuous(breaks = c(0, 1, 2, 3, 4, 5), limits = c(0,5)) +
-  labs(x = "Experimental group", y = "Contribution [Credits]") +
-  theme(legend.position="none",
-        plot.title = element_text(angle = 45, vjust=.5,size = 10),
-        axis.title.x = element_text(size = 26),
-        axis.title.y = element_text(size = 26),
-        axis.text = element_text(vjust=.5, size=16))
-
+  labs(x = "Experimental group", y = "Contribution [€]") +
+  theme_bw(base_size = 26)
 
 # Shapiro Wilk normality test ----
 shapiro.test(df$Contribution)
@@ -162,15 +144,9 @@ fisher.test(df$default.value, df$TreatmentnoC)
 
 # Figure B.4
 ggplot(data = df, aes(x = Contribution, y = ..count../sum(..count..))) +
-  geom_histogram(binwidth = .5) +
+  geom_histogram(binwidth = .5, fill = "grey", color = "black") +
   scale_y_continuous(breaks = c(0, .05, .1, .15, .2, .25, .3, .35), limits = c(0, .37)) +
   scale_x_continuous(breaks = c(0, 1, 2,3,4,5,6,7,8,9,10), limits = c(-0.5, 10.5))+
   geom_vline(xintercept = 8, linetype = "dashed") +
-  labs(x = "Contribution [in €]", y='Fraction') +
-  theme(legend.position="none",
-        plot.title = element_text(angle = 45, vjust=.5,size = 10),
-        axis.title.x = element_text(size = 12),
-        axis.title.y = element_text(size = 12),
-        axis.text.x = element_text(vjust=.5, size=10))
-
-
+  labs(x = "Contribution [€]", y='Fraction') +
+  theme_bw(base_size = 26)

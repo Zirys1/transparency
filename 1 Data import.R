@@ -189,6 +189,6 @@ df$ReaAdv <- df$AdviceD+df$RecommendationD
 dfsub <- df[df$Treatment != "Control",]
 
 
-#write.xlsx(x = df, paste0(wd, "/2 results_cleaned.xlsx"))
+write.xlsx(x = df, paste0(wd, "/2 results_cleaned.xlsx"))
 
 save.image(paste0(wd, "/2 results_cleaned.RData"))

@@ -19,7 +19,7 @@ df$Treatment <- ifelse(is.na(df$Control) == FALSE, 0,
                                      ifelse(is.na(df$Nudge.I.P) == FALSE, 3,
                                             ifelse(is.na(df$Nudge.P) == FALSE, 4, NA)))))
 df$Treatment <- factor(df$Treatment, levels = c(0,1,2,4,3), 
-                       labels = c("Control", "Default", "Default\n+Info", "Default\n+Purpose", "Default\n+Info\n+Purpose"))
+                       labels = c("Control", "Default", "Default+Info", "Default+Purpose", "Default+Info+Purpose"))
 ## delete "old" variables
 df <- df[,-c(3:7)]
 df <- df[,c(1:2, 53, 52, 3:51)]
@@ -91,22 +91,22 @@ df$SomeInfo <- factor(df$SomeInfo, levels = c(0,1), labels = c("No Info", "SomeI
 # Create binary variables for statistical tests of pariwise Treatment comparisons
 df$ConvsDef <- ifelse(df$Treatment == "Control", 0, ifelse(df$Treatment == "Default", 1, NA))
 df$ConvsDef <- factor(df$ConvsDef, levels = c(0,1), labels = c("Control", "Default"))
-df$DefvsInf <- ifelse(df$Treatment == "Default", 0, ifelse(df$Treatment == "DefaultInfo", 1, NA))
-df$DefvsInf <- factor(df$DefvsInf, levels = c(0,1), labels = c("Default", "DefaultInfo"))
-df$ConvsPur <- ifelse(df$Treatment == "Control", 0, ifelse(df$Treatment == "DefaultPurpose", 1, NA))
-df$ConvsPur <- factor(df$ConvsPur, levels = c(0,1), labels = c("Control", "DefaultPurpose"))
-df$PurvsDef <- ifelse(df$Treatment == "DefaultPurpose", 0, ifelse(df$Treatment == "Default", 1, NA))
-df$PurvsDef <- factor(df$PurvsDef, levels = c(0,1), labels = c("DefaultPurpose", "Default"))
+df$DefvsInf <- ifelse(df$Treatment == "Default", 0, ifelse(df$Treatment == "Default+Info", 1, NA))
+df$DefvsInf <- factor(df$DefvsInf, levels = c(0,1), labels = c("Default", "Default+Info"))
+df$ConvsPur <- ifelse(df$Treatment == "Control", 0, ifelse(df$Treatment == "Default+Purpose", 1, NA))
+df$ConvsPur <- factor(df$ConvsPur, levels = c(0,1), labels = c("Control", "Default+Purpose"))
+df$PurvsDef <- ifelse(df$Treatment == "Default+Purpose", 0, ifelse(df$Treatment == "Default", 1, NA))
+df$PurvsDef <- factor(df$PurvsDef, levels = c(0,1), labels = c("Default+Purpose", "Default"))
 
-df$PurvsInfPurvsInf <- ifelse(df$Treatment == "DefaultPurpose", 0, ifelse(df$Treatment == "DefaultInfoPurpose", 1, ifelse(df$Treatment == "DefaultInfo", 2, NA)))
-df$PurvsInfPurvsInf <- factor(df$PurvsInfPurvsInf, levels = c(0,1,2), labels = c("DefaultPurpose", "DefaultInfoPurpose", "DefaultInfo"))
-df$PurvsInfPur <- ifelse(df$Treatment == "DefaultPurpose", 0, ifelse(df$Treatment == "DefaultInfoPurpose", 1,NA))
-df$PurvsInfPur <- factor(df$PurvsInfPur, levels = c(0,1), labels = c("DefaultPurpose", "DefaultInfoPurpose"))
-df$InfPurvsInf <- ifelse(df$Treatment == "DefaultInfoPurpose", 0, ifelse(df$Treatment == "DefaultInfo", 1, NA))
-df$InfPurvsInf <- factor(df$InfPurvsInf, levels = c(0,1), labels = c("DefaultInfoPurpose", "DefaultInfo"))
+df$PurvsInfPurvsInf <- ifelse(df$Treatment == "Default+Purpose", 0, ifelse(df$Treatment == "Default+Info+Purpose", 1, ifelse(df$Treatment == "Default+Info", 2, NA)))
+df$PurvsInfPurvsInf <- factor(df$PurvsInfPurvsInf, levels = c(0,1,2), labels = c("Default+Purpose", "Default+Info+Purpose", "Default+Info"))
+df$PurvsInfPur <- ifelse(df$Treatment == "Default+Purpose", 0, ifelse(df$Treatment == "Default+Info+Purpose", 1,NA))
+df$PurvsInfPur <- factor(df$PurvsInfPur, levels = c(0,1), labels = c("Default+Purpose", "Default+Info+Purpose"))
+df$InfPurvsInf <- ifelse(df$Treatment == "Default+Info+Purpose", 0, ifelse(df$Treatment == "Default+Info", 1, NA))
+df$InfPurvsInf <- factor(df$InfPurvsInf, levels = c(0,1), labels = c("Default+Info+Purpose", "Default+Info"))
 
 df$Influence <- ifelse(df$Treatment == "Control", NA, df$Influence)
-df$Influence <- factor(df$Influence, levels = c(0,1), labels = c("No", "Yes"))
+df$Influence <- factor(df$Influence, levels = c(0,1), labels = c("Yes", "No"))
 
 
 df$Contributionno0 <- ifelse(df$Contribution == 0, NA, df$Contribution)

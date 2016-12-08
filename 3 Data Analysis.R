@@ -150,3 +150,22 @@ ggplot(data = df, aes(x = Contribution, y = ..count../sum(..count..))) +
   geom_vline(xintercept = 8, linetype = "dashed") +
   labs(x = "Contribution [€]", y='Fraction') +
   theme_bw(base_size = 26)
+
+# Intensive margin in Conclusions and discussion part
+bar <- df %>%
+  group_by(Treatment) %>%
+  summarise(
+    n = sum(Contributed),
+    meanCon = mean(Contribution),
+    intMarg = mean(Contribution[Contributed == 1]),
+    sdintMarg = sd(Contribution[Contributed == 1]),
+    seintMarg = sd(Contribution[Contributed == 1])/sqrt(n),
+    meintMarg = qt(1-0.05/2, df = n)*seintMarg
+  )
+
+ggplot(data = bar, aes(x = Treatment, y = intMarg)) +
+  geom_bar(fill = "grey", color = "black", stat = "identity", width = 0.5) +
+  geom_errorbar(aes(ymin = (intMarg - meintMarg), ymax = (intMarg + meintMarg)), width = 0.1) +
+#  scale_y_continuous(breaks = c(0, 1, 2, 3, 4, 5), limits = c(0,5)) +
+  labs(x = "Experimental group", y = "Intensive margin [€]") +
+  theme_bw(base_size = 26)

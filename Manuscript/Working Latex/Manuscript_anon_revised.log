@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.21)  1 MAR 2017 15:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.21)  10 JUL 2017 18:10
 entering extended mode
 **Manuscript_anon_revised.tex
 
-("Z:\Projects\Transparency\Submission\JEP\Manuscript\Working Latex\Manuscript_a
-non_revised.tex"
+("Z:\Projects\R Projects\transparency_submission\Manuscript\Working Latex\Manus
+cript_anon_revised.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -97,8 +97,9 @@ File: upsy.fd 2001/06/04 font definitions for U/psy.
 \@sep=\skip43
 \@@sep=\skip44
 
-("Z:\Projects\Transparency\Submission\JEP\Manuscript\Working Latex\Manuscript_a
-non_revised.spl") ("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
+("Z:\Projects\R Projects\transparency_submission\Manuscript\Working Latex\Manus
+cript_anon_revised.spl")
+("C:\Program Files\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip45
 \bibsep=\skip46
@@ -366,8 +367,8 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("Z:\Projects\Transparency\Submission\JEP\Manuscript\Working Latex\Manuscript_a
-non_revised.aux")
+("Z:\Projects\R Projects\transparency_submission\Manuscript\Working Latex\Manus
+cript_anon_revised.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
@@ -382,7 +383,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
 LaTeX Font Info:    ... okay on input line 80.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen148
@@ -421,18 +423,17 @@ LaTeX Info: Redefining \ref on input line 80.
 LaTeX Info: Redefining \pageref on input line 80.
 LaTeX Info: Redefining \nameref on input line 80.
 
-("Z:\Projects\Transparency\Submission\JEP\Manuscript\Working Latex\Manuscript_a
-non_revised.out")
-("Z:\Projects\Transparency\Submission\JEP\Manuscript\Working Latex\Manuscript_a
-non_revised.out")
+("Z:\Projects\R Projects\transparency_submission\Manuscript\Working Latex\Manus
+cript_anon_revised.out")
+("Z:\Projects\R Projects\transparency_submission\Manuscript\Working Latex\Manus
+cript_anon_revised.out")
 \@outlinefile=\write4
  [1
 
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Try loading font information for U+msa on input line 124.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 124.
@@ -490,78 +491,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-[10] [11] [12] [13] [14] [15] [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+[10] [11] [12]
+Overfull \hbox (9.57457pt too wide) in paragraph at lines 188--190
+\OT1/cmr/m/n/12 tests com-par-ing con-tri-bu-tions in the Con-trol vs. De-fault
+, De-fault+Information,
+ []
+
+[13] [14] [15] [16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--221
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 
  []
 
-[19] [20]
+
 Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
+[19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--240
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--252
+Underfull \hbox (badness 10000) in paragraph at lines 259--261
 
  []
 
 [22] [23] [24] [25] [26]
-("Z:\Projects\Transparency\Submission\JEP\Manuscript\Working Latex\Manuscript_a
-non_revised.bbl" [27] [28] [29] [30] [31]) [32]
+("Z:\Projects\R Projects\transparency_submission\Manuscript\Working Latex\Manus
+cript_anon_revised.bbl" [27] [28] [29] [30] [31]) [32]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 283.
+               Default added (so using `tbp') on input line 292.
 
 <Figure1.pdf, id=453, page=1, 794.97pt x 614.295pt>
 File: Figure1.pdf Graphic file (type pdf)
  <use Figure1.pdf, page 1>
-Package pdftex.def Info: Figure1.pdf, page1 used on input line 330.
+Package pdftex.def Info: Figure1.pdf, page1 used on input line 339.
 (pdftex.def)             Requested size: 370.49881pt x 286.30035pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Float too large for page by 28.58826pt on input line 461.
+LaTeX Warning: Float too large for page by 28.58826pt on input line 470.
 
-[33] [34 <Z:/Projects/Transparency/Submission/JEP/Manuscript/Working Latex/Figu
-re1.pdf>] [35] [36] [37]
-Underfull \hbox (badness 10000) in paragraph at lines 531--533
+[33] [34 <Z:/Projects/R Projects/transparency_submission/Manuscript/Working Lat
+ex/Figure1.pdf>] [35] [36] [37]
+Underfull \hbox (badness 10000) in paragraph at lines 540--542
 
  []
 
@@ -572,10 +579,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 531--533
 File: InstructTable.pdf Graphic file (type pdf)
 
 <use InstructTable.pdf, page 1>
-Package pdftex.def Info: InstructTable.pdf, page1 used on input line 543.
+Package pdftex.def Info: InstructTable.pdf, page1 used on input line 552.
 (pdftex.def)             Requested size: 390.0pt x 201.33202pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 542--545
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 551--554
  [][] 
  []
 
@@ -584,33 +591,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 
-pdfTeX warning: pdflatex (file Z:/Projects/Transparency/Submission/JEP/Manuscri
-pt/Working Latex/FigureA2.pdf): PDF inclusion: found PDF version <1.6>, but at 
-most version <1.5> allowed
+pdfTeX warning: pdflatex (file Z:/Projects/R Projects/transparency_submission/M
+anuscript/Working Latex/FigureA2.pdf): PDF inclusion: found PDF version <1.6>, 
+but at most version <1.5> allowed
 <FigureA2.pdf, id=489, page=1, 1150.39786pt x 722.76022pt>
 File: FigureA2.pdf Graphic file (type pdf)
 
 <use FigureA2.pdf, page 1>
-Package pdftex.def Info: FigureA2.pdf, page1 used on input line 554.
-(pdftex.def)             Requested size: 390.0pt x 245.0294pt.
-
-Overfull \hbox (18.14299pt too wide) in paragraph at lines 553--557
- [][] 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-
-pdfTeX warning: pdflatex (file Z:/Projects/Transparency/Submission/JEP/Manuscri
-pt/Working Latex/FigureA3.pdf): PDF inclusion: found PDF version <1.6>, but at 
-most version <1.5> allowed
-<FigureA3.pdf, id=490, page=1, 1150.39786pt x 722.76022pt>
-File: FigureA3.pdf Graphic file (type pdf)
-
-<use FigureA3.pdf, page 1>
-Package pdftex.def Info: FigureA3.pdf, page1 used on input line 563.
+Package pdftex.def Info: FigureA2.pdf, page1 used on input line 563.
 (pdftex.def)             Requested size: 390.0pt x 245.0294pt.
 
 Overfull \hbox (18.14299pt too wide) in paragraph at lines 562--566
@@ -620,17 +608,37 @@ Overfull \hbox (18.14299pt too wide) in paragraph at lines 562--566
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[39] [40 <Z:/Projects/Transparency/Submission/JEP/Manuscript/Working Latex/Inst
-ructTable.pdf> <Z:/Projects/Transparency/Submission/JEP/Manuscript/Working Late
-x/FigureA2.pdf>] [41 <Z:/Projects/Transparency/Submission/JEP/Manuscript/Workin
-g Latex/FigureA3.pdf>] <FigureB4.pdf, id=527, page=1, 794.97pt x 614.295pt>
+
+
+pdfTeX warning: pdflatex (file Z:/Projects/R Projects/transparency_submission/M
+anuscript/Working Latex/FigureA3.pdf): PDF inclusion: found PDF version <1.6>, 
+but at most version <1.5> allowed
+<FigureA3.pdf, id=490, page=1, 1150.39786pt x 722.76022pt>
+File: FigureA3.pdf Graphic file (type pdf)
+
+<use FigureA3.pdf, page 1>
+Package pdftex.def Info: FigureA3.pdf, page1 used on input line 572.
+(pdftex.def)             Requested size: 390.0pt x 245.0294pt.
+
+Overfull \hbox (18.14299pt too wide) in paragraph at lines 571--575
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[39] [40 <Z:/Projects/R Projects/transparency_submission/Manuscript/Working Lat
+ex/InstructTable.pdf> <Z:/Projects/R Projects/transparency_submission/Manuscrip
+t/Working Latex/FigureA2.pdf>] [41 <Z:/Projects/R Projects/transparency_submiss
+ion/Manuscript/Working Latex/FigureA3.pdf>]
+<FigureB4.pdf, id=527, page=1, 794.97pt x 614.295pt>
 File: FigureB4.pdf Graphic file (type pdf)
 
 <use FigureB4.pdf, page 1>
-Package pdftex.def Info: FigureB4.pdf, page1 used on input line 576.
+Package pdftex.def Info: FigureB4.pdf, page1 used on input line 585.
 (pdftex.def)             Requested size: 390.0pt x 301.37274pt.
 
-Overfull \hbox (18.14299pt too wide) in paragraph at lines 575--580
+Overfull \hbox (18.14299pt too wide) in paragraph at lines 584--589
  [][] 
  []
 
@@ -638,10 +646,10 @@ Overfull \hbox (18.14299pt too wide) in paragraph at lines 575--580
 File: FigureB5.pdf Graphic file (type pdf)
 
 <use FigureB5.pdf, page 1>
-Package pdftex.def Info: FigureB5.pdf, page1 used on input line 683.
+Package pdftex.def Info: FigureB5.pdf, page1 used on input line 692.
 (pdftex.def)             Requested size: 390.0pt x 283.64493pt.
 
-Overfull \hbox (18.14299pt too wide) in paragraph at lines 682--687
+Overfull \hbox (18.14299pt too wide) in paragraph at lines 691--696
  [][] 
  []
 
@@ -652,7 +660,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: FigureB6.pdf Graphic file (type pdf)
 
 <use FigureB6.pdf, page 1>
-Package pdftex.def Info: FigureB6.pdf, page1 used on input line 693.
+Package pdftex.def Info: FigureB6.pdf, page1 used on input line 702.
 (pdftex.def)             Requested size: 234.00238pt x 170.1896pt.
 
 
@@ -662,7 +670,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: FigureB7.pdf Graphic file (type pdf)
 
 <use FigureB7.pdf, page 1>
-Package pdftex.def Info: FigureB7.pdf, page1 used on input line 703.
+Package pdftex.def Info: FigureB7.pdf, page1 used on input line 712.
 (pdftex.def)             Requested size: 234.00238pt x 170.1896pt.
 
 
@@ -670,66 +678,45 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [42
 
- <Z:/Projects/Transparency/Submission/JEP/Manuscript/Working Latex/FigureB4.pdf
->] [43] [44 <Z:/Projects/Transparency/Submission/JEP/Manuscript/Working Latex/F
-igureB5.pdf>] [45 <Z:/Projects/Transparency/Submission/JEP/Manuscript/Working L
-atex/FigureB6.pdf> <Z:/Projects/Transparency/Submission/JEP/Manuscript/Working 
-Latex/FigureB7.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 714--728
+ <Z:/Projects/R Projects/transparency_submission/Manuscript/Working Latex/Figur
+eB4.pdf>] [43] [44 <Z:/Projects/R Projects/transparency_submission/Manuscript/W
+orking Latex/FigureB5.pdf>] [45 <Z:/Projects/R Projects/transparency_submission
+/Manuscript/Working Latex/FigureB6.pdf> <Z:/Projects/R Projects/transparency_su
+bmission/Manuscript/Working Latex/FigureB7.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 723--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--728
+Underfull \hbox (badness 10000) in paragraph at lines 723--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--728
+Underfull \hbox (badness 10000) in paragraph at lines 723--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--728
+Underfull \hbox (badness 10000) in paragraph at lines 723--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--728
+Underfull \hbox (badness 10000) in paragraph at lines 723--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--728
+Underfull \hbox (badness 10000) in paragraph at lines 723--737
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 714--728
+Underfull \hbox (badness 10000) in paragraph at lines 723--737
 
  []
 
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-Missing character: There is no â in font cmr12!
-Missing character: There is no € in font cmr12!
-Missing character: There is no “ in font cmr12!
-
-Underfull \hbox (badness 10000) in paragraph at lines 729--730
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 732.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 732.
- [46
-
-]
 Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
@@ -741,13 +728,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 738--739
 
  []
 
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 741.
 
-Underfull \hbox (badness 10000) in paragraph at lines 744--745
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 741.
+ [46
+
+]
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+Missing character: There is no â in font cmr12!
+Missing character: There is no € in font cmr12!
+Missing character: There is no “ in font cmr12!
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--748
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 748--749
+Underfull \hbox (badness 10000) in paragraph at lines 753--754
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--758
 
  []
 
@@ -758,27 +766,27 @@ Missing character: There is no â in font cmr12!
 Missing character: There is no € in font cmr12!
 Missing character: There is no “ in font cmr12!
 
-Underfull \hbox (badness 10000) in paragraph at lines 750--751
+Underfull \hbox (badness 10000) in paragraph at lines 759--760
 
  []
 
 [47]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 770.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 779.
  [48]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 770.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 779.
 
-("Z:\Projects\Transparency\Submission\JEP\Manuscript\Working Latex\Manuscript_a
-non_revised.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 770.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 770.
+("Z:\Projects\R Projects\transparency_submission\Manuscript\Working Latex\Manus
+cript_anon_revised.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 779.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 779.
 Package rerunfilecheck Info: File `Manuscript_anon_revised.out' has not changed
 .
 (rerunfilecheck)             Checksum: 2D6BD7D0EBDA9AFFC7CD134AE9D0C87B;710.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 770.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 779.
  ) 
 Here is how much of TeX's memory you used:
  8533 strings out of 493921
- 126175 string characters out of 3147257
+ 126280 string characters out of 3147257
  258372 words of memory out of 3000000
  11559 multiletter control sequences out of 15000+200000
  11973 words of font info for 46 fonts, out of 3000000 for 9000
@@ -836,7 +844,7 @@ m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmti12.pfb>
-Output written on Manuscript_anon_revised.pdf (48 pages, 512971 bytes).
+Output written on Manuscript_anon_revised.pdf (48 pages, 513203 bytes).
 PDF statistics:
  664 PDF objects out of 1000 (max. 8388607)
  139 named destinations out of 1000 (max. 500000)

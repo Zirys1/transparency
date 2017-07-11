@@ -14,6 +14,7 @@ library(dplyr) # for data manipulation
 # Manuscript ----
 
 # Experimental Design ----
+nrow(df)
 mean(df$Age)
 table(df$Gender)
 table(df$StudyAreaF)

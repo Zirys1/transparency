@@ -28,10 +28,21 @@ table(df$Contributed)
 table(df$Used.default)
 
 # Table 2 ----
-describeBy(df$Contribution, df$Treatment)
-describeBy(df$Dist, df$Treatment)
-table(df$Contributed, df$Treatment)
-table(df$Used.default, df$Treatment)
+detach("package:plyr")
+tab2 <- df %>%
+  group_by(Treatment) %>% 
+  summarise(
+    ContributionM = round(mean(Contribution), 2),
+    ContributionSD = round(sd(Contribution), 2),
+    DistanceM = round(mean(Dist), 2),
+    DistanceSD = round(sd(Dist), 2),
+    ContributedM = round(length(Pariticipant[Contributed == 1])/length(Pariticipant), 4)*100,
+    PickedDefM = round(length(Pariticipant[default.value == 1])/length(Pariticipant), 4)*100,
+    n = length(Pariticipant)
+    )
+
+write.xlsx(as.data.frame(tab2), file = paste0(wd, "/Table2.xlsx")) # as excel file
+
 
 # Figure 1 ----
 # below function calculates necessary components of bar plots
@@ -120,6 +131,20 @@ fisher.test(df$default.value[df$Treatment == "Default+Info" | df$Treatment == "D
 fisher.test(df$default.value[df$Treatment == "Default+Purpose" | df$Treatment == "Default+Info+Purpose"], df$Treatment[df$Treatment == "Default+Purpose" | df$Treatment == "Default+Info+Purpose"])
 
 # Table 3 ----
+detach("package:plyr")
+tab3 <- df %>%
+  group_by(Treatment) %>% 
+  summarise(
+    AgeM = round(mean(Age), 2),
+    AgeSD = round(sd(Age), 2),
+    GenderM = round(length(Pariticipant[Gender == "Male"])/length(Pariticipant), 4)*100,
+    ImportantM = round(length(Pariticipant[Important == "Important"])/length(Pariticipant), 4)*100,
+    PastParticipationM = round(length(Pariticipant[PastParticipation == "Not Participated"])/length(Pariticipant), 4)*100,
+    EUETSusefulM = round(length(Pariticipant[EUETSuseful == "Not effective"])/length(Pariticipant), 4)*100,
+  )
+
+write.xlsx(as.data.frame(tab3), file = paste0(wd, "/Table3.xlsx")) # as excel file
+
 describeBy(df$Age, df$Treatment)
 table(df$Gender, df$Treatment)
 table(df$Important, df$Treatment)

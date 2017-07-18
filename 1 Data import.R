@@ -24,6 +24,10 @@ df$Treatment <- factor(df$Treatment, levels = c(0,1,2,4,3),
 df <- df[,-c(3:7)]
 df <- df[,c(1:2, 53, 52, 3:51)]
 
+## Location variable indicating if observation is from HH lab
+df$HH <- ifelse(df$Session > 11, 1, 0)
+df$HH <- factor(df$HH, levels = c(0,1), labels = c("R", "HH"))
+
 # Create Reactance score
 df$RegulationD <- ifelse(df$Regulation > 3, 1, 0)
 df$ContradictD <- ifelse(df$Contradict > 3, 1, 0)

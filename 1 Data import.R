@@ -28,6 +28,9 @@ df <- df[,c(1:2, 53, 52, 3:51)]
 df$HH <- ifelse(df$Session > 11, 1, 0)
 df$HH <- factor(df$HH, levels = c(0,1), labels = c("R", "HH"))
 
+# Correcting gender of subject that reported to have mistakenly selected male instead of female
+df$Gender[df$Pariticipant == "299"] <- 0
+
 # Create Reactance score
 df$RegulationD <- ifelse(df$Regulation > 3, 1, 0)
 df$ContradictD <- ifelse(df$Contradict > 3, 1, 0)

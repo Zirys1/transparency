@@ -1,9 +1,9 @@
 # Import data for transparency experiment
 rm(list=ls())
 library(xlsx)
-wd <- "Z:/Projects/R Projects/transparency_submission" # specify working directory here
-setwd(wd)
-df <- read.xlsx(file = paste0(wd, "/0 results_raw.xlsx"), sheetIndex = 1, startRow = 3, header = TRUE, endRow = 383, colIndex = c(6:61))
+#wd <- "./raw" # specify working directory here
+#setwd(wd)
+df <- read.xlsx(file = "0 results_raw.xlsx", sheetIndex = 1, startRow = 3, header = TRUE, endRow = 501, colIndex = c(6:61))
 
 # Create one Contribution variable (numeric)
 df$Contribution <- ifelse(is.na(df$Control) == FALSE, df$Control,
@@ -37,7 +37,21 @@ df$Contribution[df$Pariticipant == "363"] <- 0
 df$Contribution[df$Pariticipant == "360"] <- 0
 df$Used.default[df$Pariticipant == "363"] <- 0
 df$Used.default[df$Pariticipant == "360"] <- 0
-  
+
+# Correcting two contribution amounts that were reported by participants to be a mistake
+# clicked default by mistake
+df$Contribution[df$Pariticipant == "397"] <- 3
+df$Contribution[df$Pariticipant == "398"] <- 2
+df$Used.default[df$Pariticipant == "397"] <- 0
+df$Used.default[df$Pariticipant == "398"] <- 0
+
+# Correcting two contribution amounts that were reported by participants to be a mistake
+# clicked default by mistake
+df$Contribution[df$Pariticipant == "428"] <- 2
+df$Contribution[df$Pariticipant == "437"] <- 2
+df$Used.default[df$Pariticipant == "428"] <- 0
+df$Used.default[df$Pariticipant == "437"] <- 0
+
 
 # Create Reactance score
 df$RegulationD <- ifelse(df$Regulation > 3, 1, 0)

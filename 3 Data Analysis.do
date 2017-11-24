@@ -126,9 +126,9 @@ eststo interact2
 quietly tobit Contribution i.Treatmentf1##c.ReactanceM i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
 eststo interact3
 * for rtf format output
-esttab interact1 interact interact3 using interact11.rtf, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
+esttab interact1 interact2 interact3 using interact11.rtf, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
 * tex format output
-esttab interact1 interact interact3 using interact11.tex, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
+esttab interact1 interact2 interact3 using interact11.tex, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
 eststo clear
 
 * LRtests

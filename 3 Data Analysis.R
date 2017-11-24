@@ -16,6 +16,7 @@ library(dplyr) # for data manipulation
 # Experimental Design ----
 nrow(df)
 mean(df$Age)
+median(df$Age)
 table(df$Gender)
 table(df$StudyAreaF)
 
@@ -81,15 +82,38 @@ summarySE <- function(data=NULL, measurevar, groupvars=NULL, na.rm=FALSE,
   
   return(datac)
 }
+common_ops <-  list(theme(plot.title = element_text(size=8),
+                          axis.text = element_text(size = 8),
+                          axis.title = element_text(size = 8),
+                          strip.text = element_text(size = 8),
+                          legend.position="bottom",
+                          #   panel.grid.major=element_blank(),
+                          #   panel.grid.minor=element_blank(),
+                          panel.border=element_blank(),
+                          axis.line=element_line(),
+                          text=element_text()))
 
+levels(df$Treatment) <- c("Control", "Default", "Default\n+Info", "Default\n+Purpose", "Default\n+Info\n+Purpose") 
 bar <- summarySE(df, measurevar = "Contribution", groupvars = "Treatment")
 
-ggplot(data = bar, aes(x = Treatment, y = Contribution)) +
-  geom_bar(fill = "grey", color = "black", stat = "identity", width = 0.5) +
+x1 <- ggplot(data = bar, aes(x = Treatment, y = Contribution)) +
+  geom_bar(fill = "grey40", stat = "identity", width = 0.5) +
   geom_errorbar(aes(ymin = (Contribution - ci), ymax = (Contribution + ci)), width = 0.1) +
   scale_y_continuous(breaks = c(0, 1, 2, 3, 4, 5), limits = c(0,5)) +
-  labs(x = "Experimental group", y = "Contribution [€]") +
-  theme_bw(base_size = 26)
+  labs(x = "Experimental group", y = "Contribution [EUR]") +
+  theme_bw() +
+  common_ops +
+  scale_fill_grey() +
+  theme(axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) 
+
+#library(tikzDevice)
+#tikz(file = "Figure1.tex", width = 4.5, height = 3.1)
+x1
+#dev.off()
 
 # Shapiro Wilk normality test ----
 shapiro.test(df$Contribution)
@@ -169,13 +193,26 @@ chisq.test(df$Contributed, df$TreatmentnoC)
 fisher.test(df$default.value, df$TreatmentnoC)
 
 # Figure B.4
-ggplot(data = df, aes(x = Contribution, y = ..count../sum(..count..))) +
-  geom_histogram(binwidth = .5, fill = "grey", color = "black") +
+x1 <- ggplot(data = df, aes(x = Contribution, y = ..count../sum(..count..))) +
+  geom_histogram(binwidth = .5, fill = "grey40") +
   scale_y_continuous(breaks = c(0, .05, .1, .15, .2, .25, .3, .35), limits = c(0, .37)) +
   scale_x_continuous(breaks = c(0, 1, 2,3,4,5,6,7,8,9,10), limits = c(-0.5, 10.5))+
   geom_vline(xintercept = 8, linetype = "dashed") +
-  labs(x = "Contribution [€]", y='Fraction') +
-  theme_bw(base_size = 26)
+  labs(x = "Contribution [EUR]", y='Fraction') +
+  theme_bw()+
+  common_ops +
+  scale_fill_grey() +
+  theme(axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) 
+
+library(tikzDevice)
+tikz(file = "FigureB4.tex", width = 4.5, height = 3.1)
+x1
+dev.off()
+
 
 # Intensive margin in Conclusions and discussion part
 bar <- df %>%

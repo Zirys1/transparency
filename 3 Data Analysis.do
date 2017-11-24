@@ -154,24 +154,24 @@ eststo tobit3a
 quietly tobit Contribution ib4.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
 eststo tobit3b
 
-coefplot tobit3 , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H1) ///
+coefplot tobit3 , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H1x) ///
 headings(1.Treatmentf1 = "{it:Treatment effects:}")
 
-coefplot tobit3a , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H2) ///
+coefplot tobit3a , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H2x) ///
 headings(1.Treatmentf1 = "{it:Treatment effects:}")
 
-coefplot tobit3b , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H4) ///
+coefplot tobit3b , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H4x) ///
 headings(1.Treatmentf1 = "{it:Treatment effects:}")
 
-quietly tobit Contribution i.Treatmentf1##c.ReactanceM i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
+quietly tobit Contribution i.TreatmentnoCf1##c.ReactanceM i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
 eststo interact3
 
-coefplot interact3 , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H6) ///
+coefplot interact3 , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H6x) ///
 headings(1.TreatmentnoCf1 = "{it:Treatment effects:}" "Default" = "{it:Reactance interaction:}" "Reactance" = "{it:Reactance effect:}") ///
 rename(1.TreatmentnoCf1#c.ReactanceM = "Default" 2.TreatmentnoCf1#c.ReactanceM = "Default+Info" ReactanceM = "Reactance" ///
 3.TreatmentnoCf1#c.ReactanceM = "Default+Info+Purpose" 4.TreatmentnoCf1#c.ReactanceM = "Default+Purpose")
 
-gr combine H1.gph H2.gph H4.gph H6.gph
+gr combine H1x.gph H2x.gph H4x.gph H6x.gph
 eststo clear
 
 * Figure B.6

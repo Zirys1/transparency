@@ -9,6 +9,7 @@ library(psych)
 library(dunn.test)
 library(ggplot2) # for visualization
 library(dplyr) # for data manipulation
+library(tikzDevice)
 # Data Analysis
 
 # Manuscript ----

@@ -56,6 +56,14 @@ replace DefPur = 1 if Treatmentf == 5
 gen DefInfPur = 0
 replace DefInfPur = 1 if Treatmentf == 4
 
+gen Location = .
+replace Location = 1 if HH == "R"
+replace Location = 2 if HH == "HH"
+
+* label factor variables
+la def F 1 "Rotterdam" 2 "Hamburg" 
+label values Location F
+
 ************************
 **** Storing data ******
 ************************
@@ -78,12 +86,19 @@ quietly tobit Contribution i.Treatmentf1, robust ll(0)
 eststo tobit1
 quietly tobit Contribution i.Treatmentf1 i.ImportanceD , robust ll(0)
 eststo tobit2
-quietly tobit Contribution i.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
+quietly tobit Contribution i.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, robust ll(0)
 eststo tobit3
+quietly tobit Contribution i.Treatmentf1##c.ReactanceM, robust ll(0)
+eststo interact1
+quietly tobit Contribution i.Treatmentf1##c.ReactanceM i.ImportanceD , robust ll(0)
+eststo interact2
+quietly tobit Contribution i.Treatmentf1##c.ReactanceM i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, robust ll(0)
+eststo interact3
+
 * for rtf format output
-esttab tobit1 tobit2 tobit3 using tobit.rtf, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
+esttab tobit1 tobit2 tobit3 interact1 interact2 interact3 using tobit.rtf, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
 * tex format output
-esttab tobit1 tobit2 tobit3 using tobit.tex, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
+esttab tobit1 tobit2 tobit3 interact1 interact2 interact3 using tobit.tex, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
 eststo clear
 
 * LRtests
@@ -106,31 +121,6 @@ test 2.Treatmentf1 == 3.Treatmentf1 == 4.Treatmentf1 == 5.Treatmentf1
 quietly tobit Contribution i.Def i.DefInf i.DefPur i.DefInfPur i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.ImportanceD, robust ll(0)
 test 1.Def = 1.DefInf = 1.DefPur = 1.DefInfPur 
 
-* Table 5
-quietly ologit ThreatToFreedom i.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, vce(robust)
-eststo ologit1
-quietly ologit Anger i.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, vce(robust)
-eststo ologit2
-* for rtf format output
-esttab ologit1 ologit2 using ologit.rtf, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
-* tex format output
-esttab ologit1 ologit2 using ologit.tex, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
-eststo clear
-
-
-* Table 6
-quietly tobit Contribution i.Treatmentf1##c.ReactanceM, robust ll(0)
-eststo interact1
-quietly tobit Contribution i.Treatmentf1##c.ReactanceM i.ImportanceD , robust ll(0)
-eststo interact2
-quietly tobit Contribution i.Treatmentf1##c.ReactanceM i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
-eststo interact3
-* for rtf format output
-esttab interact1 interact2 interact3 using interact11.rtf, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
-* tex format output
-esttab interact1 interact2 interact3 using interact11.tex, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
-eststo clear
-
 * LRtests
 quietly tobit Contribution i.Treatmentf1##c.ReactanceM , ll(0) // robust not possible for lrtest
 eststo t1
@@ -144,29 +134,39 @@ quietly tobit Contribution i.Treatmentf1##c.ReactanceM i.Genderf c.Age i.PastPar
 eststo t4
 lrtest t3 t4 // full model performs better
 
+* Table 5
+quietly ologit ThreatToFreedom i.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, vce(robust)
+eststo ologit1
+quietly ologit Anger i.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, vce(robust)
+eststo ologit2
+* for rtf format output
+esttab ologit1 ologit2 using ologit.rtf, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
+* tex format output
+esttab ologit1 ologit2 using ologit.tex, se star(x 0.10 * 0.05 ** 0.01 *** 0.001) nobase l nogaps
+eststo clear
 
 
 * Figure B.5
-quietly tobit Contribution i.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
+quietly tobit Contribution i.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, robust ll(0)
 eststo tobit3
-quietly tobit Contribution ib2.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
+quietly tobit Contribution ib2.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, robust ll(0)
 eststo tobit3a
-quietly tobit Contribution ib4.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
+quietly tobit Contribution ib4.Treatmentf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, robust ll(0)
 eststo tobit3b
 
-coefplot tobit3 , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H1x) ///
+coefplot tobit3 , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness ?.Location) omitted base levels(95) xlabel(-4(1)4) saving(H1x) ///
 headings(1.Treatmentf1 = "{it:Treatment effects:}")
 
-coefplot tobit3a , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H2x) ///
+coefplot tobit3a , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness ?.Location) omitted base levels(95) xlabel(-4(1)4) saving(H2x) ///
 headings(1.Treatmentf1 = "{it:Treatment effects:}")
 
-coefplot tobit3b , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H4x) ///
+coefplot tobit3b , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness ?.Location) omitted base levels(95) xlabel(-4(1)4) saving(H4x) ///
 headings(1.Treatmentf1 = "{it:Treatment effects:}")
 
-quietly tobit Contribution i.TreatmentnoCf1##c.ReactanceM i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, robust ll(0)
+quietly tobit Contribution i.TreatmentnoCf1##c.ReactanceM i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, robust ll(0)
 eststo interact3
 
-coefplot interact3 , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base levels(95) xlabel(-4(1)4) saving(H6x) ///
+coefplot interact3 , xline(0) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness ?.Location) omitted base levels(95) xlabel(-4(1)4) saving(H6x) ///
 headings(1.TreatmentnoCf1 = "{it:Treatment effects:}" "Default" = "{it:Reactance interaction:}" "Reactance" = "{it:Reactance effect:}") ///
 rename(1.TreatmentnoCf1#c.ReactanceM = "Default" 2.TreatmentnoCf1#c.ReactanceM = "Default+Info" ReactanceM = "Reactance" ///
 3.TreatmentnoCf1#c.ReactanceM = "Default+Info+Purpose" 4.TreatmentnoCf1#c.ReactanceM = "Default+Purpose")
@@ -175,18 +175,18 @@ gr combine H1x.gph H2x.gph H4x.gph H6x.gph
 eststo clear
 
 * Figure B.6
-quietly ologit ThreatToFreedom i.TreatmentnoCf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, vce(robust)
+quietly ologit ThreatToFreedom i.TreatmentnoCf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, vce(robust)
 margins, dydx(*) predict(outcome(4)) post
 eststo ThreatToFreedom
-coefplot ThreatToFreedom, xline(0) levels(95) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base xlabel(-0.1(0.05)0.1) saving(H5a) ///
+coefplot ThreatToFreedom, xline(0) levels(95) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness ?.Location) omitted base xlabel(-0.1(0.05)0.1) saving(H5a) ///
 headings(1.TreatmentnoCf1 = "{it:Treatment effects:}")
 eststo clear
 
 * Figure B.7
-quietly ologit Anger i.TreatmentnoCf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful, vce(robust)
+quietly ologit Anger i.TreatmentnoCf1 i.ImportanceD i.Genderf c.Age i.PastParticipationf i.EU_ETS_Useful i.Location, vce(robust)
 margins, dydx(*) predict(outcome(4)) post
 eststo Anger
-coefplot Anger, xline(0) levels(95) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness) omitted base xlabel(-0.1(0.05)0.1) saving(H5b) ///
+coefplot Anger, xline(0) levels(95) drop(_cons ?.ImportanceD ?.Genderf Age ?.PastParticipationf ?.EU_ETS_Usefulness ?.Location) omitted base xlabel(-0.1(0.05)0.1) saving(H5b) ///
 headings(1.TreatmentnoCf1 = "{it:Treatment effects:}")
 eststo clear
 
